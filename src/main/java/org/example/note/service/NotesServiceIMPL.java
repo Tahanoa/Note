@@ -4,7 +4,9 @@ import org.example.note.model.Notes;
 import org.example.note.repository.NotesRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NotesServiceIMPL implements NotesService{
     private final NotesRepository notesRepository;
     public NotesServiceIMPL(NotesRepository notesRepository) {
@@ -17,8 +19,8 @@ public class NotesServiceIMPL implements NotesService{
     }
 
     @Override
-    public void updateNote(Notes note) {
-        notesRepository.save(note);
+    public Notes updateNote(Notes note) {
+        return notesRepository.save(note);
     }
 
     @Override

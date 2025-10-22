@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface NotesService {
     void addNote(Notes note);
-    void updateNote(Notes note);
+    Notes updateNote(Notes note);
     void deleteNote(int id);
     Notes getNote(int id);
     Page<Notes> getAllNotes(Pageable pageable);
